@@ -1,0 +1,69 @@
+/*
+||-----------------------------------||
+||           Mohammad Elias          ||
+||-----------------------------------||
+*/
+#include <bits/stdc++.h>
+#define ll long long int
+#define pub push_back
+#define pob pop_back
+#define PI 3.14159265359
+#define fast ios::sync_with_stdio(false); cin.tie(NULL);
+#define yes cout<<"YES"<<endl
+#define no cout<<"NO"<<endl
+#define cyes cout<<"Yes"<<endl
+#define cno cout<<"No"<<endl
+#define minus cout<<-1<<endl
+using namespace std;
+
+void solve()
+{
+   int n,m;
+   cin>>n>>m;
+
+   string x,s;
+   cin>>x>>s;
+
+   if(x==s)
+   {
+        cout<<0<<endl;
+        return;
+   }
+
+  
+    string tmp = x;
+    int cnt = 0;
+    while(n<m)
+    {
+        cnt++;
+        tmp += tmp;
+        n += n;
+    }
+
+    if(tmp.find(s) != string::npos)
+    {
+        cout<<cnt<<endl;
+    }
+    else
+    {
+        tmp+=tmp;
+        if(tmp.find(s) != string::npos)
+        {
+            cout<<cnt+1<<endl;
+        }
+        else cout<<-1<<endl;
+    }
+
+}
+
+int main()
+{
+    fast;
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+    return 0;
+}
